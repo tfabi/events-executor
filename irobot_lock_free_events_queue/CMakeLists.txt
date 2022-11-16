@@ -28,6 +28,7 @@ ament_target_dependencies(irobot_lock_free_events_queue INTERFACE
 
 install(TARGETS
   irobot_lock_free_events_queue
+    EXPORT export_irobot_lock_free_events_queue
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
@@ -41,7 +42,7 @@ install(DIRECTORY include/
 ament_export_include_directories("include/${PROJECT_NAME}")
 #ament_export_libraries(${PROJECT_NAME})
 # Export modern CMake targets
-#ament_export_targets(${PROJECT_NAME})
+ament_export_targets(export_${PROJECT_NAME})
 
 # Specific order: dependents before dependencies
 ament_export_dependencies(irobot_events_executor)
